@@ -2,7 +2,7 @@ let express = require('express');
 let http = require('http');
 let socket = require('socket.io');
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 let app = express();
 let server = http.createServer(app);
