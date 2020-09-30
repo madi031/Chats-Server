@@ -33,6 +33,12 @@ io.on('connection', (socket) => {
     // io.emit('chat message', msg);
   });
 
+  socket.on('new topic', (topic) => {
+    console.log('topic: ', JSON.stringify(topic));
+
+    socket.broadcast.emit('new topic', topic);
+  })
+
   socket.on('disconnect', () => {
     console.log('user disconnected');
   });
